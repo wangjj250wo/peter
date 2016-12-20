@@ -1,0 +1,16 @@
+<ion-view view-title="图片广场">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="pic_square" type="card">
+            <div class="col col-33" ng-repeat="col in data.productPic | orderBy:'-imgsrc'" ng-click="topicDetail(col)">
+                <img ng-src="{{col.imgsrc}}">
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+    <div class="top" ng-click="top()">TOP</div>
+
+
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view view-title="摄影技巧">
+
+
+    <ion-nav-buttons side="left">
+
+        <button class="button button-icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+
+        <button class="button-clear" menu-toggle="right" style="color: #fff;font-size: 14px">分类</button>
+    </ion-nav-buttons>
+
+
+
+    <ion-content>
+
+            <ion-refresher pulling-text="下拉刷新" pulling-icon="ion-load-d" on-pulling="doRefresh()"></ion-refresher>
+            <ion-list>
+            <ion-item class="item-avatar-left item-remove-animate"  ng-repeat="products in newproduct" ng-click="toDetail(products)">
+                    <img ng-src="{{products.imgsrc}}" class="news_pic">
+                    <h2 class="news_title">{{products.title}}</h2>
+                    <p class="news_time">{{products.desc}}</p>
+                    <!--删除按钮-->
+                    <ion-option-button class="button-royal" ng-click="showConfirm()">编辑</ion-option-button>
+                    <ion-option-button class="button-energized" ng-click="showAlert()">分享</ion-option-button>
+                </ion-item>
+            </ion-list>
+            <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+        <div class="top" ng-click="top()">TOP</div>
+
+
+</ion-view>

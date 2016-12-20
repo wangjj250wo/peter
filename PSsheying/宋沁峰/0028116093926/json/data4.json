@@ -1,0 +1,13 @@
+{
+  "contents":[
+    {"imgsrc": "project/images/home_03.jpg", "leftp": "印象人物", "botp": "人生很短，只好把它不断拓宽"},
+    {"imgsrc": "project/images/home_04.jpg", "leftp": "摄影红人", "botp": "Scott | 把拍森系人像变成有趣的事"},
+    {"imgsrc": "project/images/home_05.jpg", "leftp": "潜力达人", "botp": "脑洞大开的95后学生摄影师"}
+  ],
+  "contentsBot":[
+    {"imgsrc": "project/images/touxiang_01.jpg", "name": "印象人物", "sesc": "风光旅游摄影红人","imgsrc01":"project/images/home_07.jpg","imgsrc02":"project/images/home_08.jpg","imgsrc03":"project/images/home_09.jpg"},
+    {"imgsrc": "project/images/touxiang_02.jpg", "name": "摄影红人", "sesc": "风光旅游摄影红人","imgsrc01":"project/images/home_10.jpg","imgsrc02":"project/images/home_11.jpg","imgsrc03":"project/images/home_12.jpg"},
+    {"imgsrc": "project/images/touxiang_03.jpg", "name": "潜力达人", "sesc": "静物小品摄影红人","imgsrc01":"project/images/home_13.jpg","imgsrc02":"project/images/home_14.jpg","imgsrc03":"project/images/home_15.jpg"}
+
+  ]
+}

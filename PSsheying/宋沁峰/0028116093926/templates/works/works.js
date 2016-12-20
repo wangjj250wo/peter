@@ -1,0 +1,42 @@
+/**
+ * Created by Administrator on 2016/11/27.
+ */
+myapp.controller('worksCtrl',function($scope,$http,$ionicScrollDelegate){
+    $scope.data=[
+        {imgsrc1:"project/images/work_01.jpg",imgsrc2:"project/images/work_02.jpg",name1:"茶小姐",name2:"太阳之泪"},
+        {imgsrc1:"project/images/work_03.jpg",imgsrc2:"project/images/work_04.jpg",name1:"天边的老马",name2:"毛哥"},
+        {imgsrc1:"project/images/work_05.jpg",imgsrc2:"project/images/work_06.jpg",name1:"左卿候",name2:"云游"},
+        {imgsrc1:"project/images/work_07.jpg",imgsrc2:"project/images/work_08.jpg",name1:"laoli816",name2:"东东4402"},
+        {imgsrc1:"project/images/work_09.jpg",imgsrc2:"project/images/work_10.jpg",name1:"窝在",name2:"梦影"},
+        {imgsrc1:"project/images/work_11.jpg",imgsrc2:"project/images/work_12.jpg",name1:"PS手机用户",name2:"橘子"},
+        {imgsrc1:"project/images/work_13.jpg",imgsrc2:"project/images/work_14.jpg",name1:"寒冰",name2:"故犯烟瘾"}
+    ]
+    $scope.doRefresh=function(){
+        $http.get('json/data3.json')
+            .success(function(data){
+                //使用新的数据替换原有的数据
+                $scope.data=data
+            })
+            .finally(function(){
+                //通知框架，下拉刷新结束，让加载图标消失
+                $scope.$broadcast('scroll.refreshComplete')
+            })
+    }
+    $scope.loadMore=function(){
+        //向服务器请求数据
+        $http.get('json/data2.json')
+            .success(function(data){
+                //将返回的数据，追加到己有数据的后面
+                Array.prototype.push.apply($scope.data,data)
+            })
+            .finally(function(){
+                //通知框架，上拉刷新结束，隐藏加载图标
+                $scope.$broadcast('scroll.infiniteScrollComplete')
+            })
+    }
+    $scope.top=function(){
+        //让content滚动到顶部
+        $ionicScrollDelegate.scrollTop(true)
+    }
+
+})

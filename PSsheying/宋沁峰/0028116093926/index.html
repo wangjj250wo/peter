@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="../../lib/css/ionic.min.css" rel="stylesheet">
+    <link href="project/css/style.css" rel="stylesheet">
+    <script src="../../lib/js/ionic/ionic.bundle.min.js"></script>
+    <script src="project/js/app.js"></script>
+    <script src="templates/tabs/tabs.js"></script>
+    <script src="templates/news/news-controller.js"></script>
+    <script src="templates/hot/hot-controller.js"></script>
+    <script src="templates/home/home_Ctrl.js"></script>
+    <script src="templates/works/works.js"></script>
+    <script src="templates/detail/detail.js"></script>
+    <script src="templates/home_detail/home_detail.js"></script>
+    <script src="templates/pic_ht/pic_newC.js"></script>
+    <script src="templates/pic_detail/pic_detail.js"></script>
+    <script src="templates/pic_ht/pic_album.js"></script>
+    <title>PS摄影</title>
+</head>
+<body>
+<!--导航栏-->
+
+
+<!--导航视图-->
+<ion-side-menus>
+    <ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button class="button-clear"><i class="icon ion-ios-arrow-left"></i></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+<ion-side-menu side="left" class="dark-bg"  menu-close width="myWidthValue+200">
+
+    <ion-content>
+        <div class="list" id="list_lan">
+
+            <a class="item item-icon-left item-dark" ui-sref="home">
+                <i class="icon ion-ios-home-outline"></i> 首页
+            </a>
+            <a class="item item-icon-left item-dark" ui-sref="works">
+                <i class="icon ion-ios-albums-outline"></i>作品
+            </a>
+            <a class="item item-icon-left item-dark" ui-sref="tabs_pic.pic_new">
+                <i class="icon ion-image"></i>图片广场
+            </a>
+            <a class="item item-icon-left item-dark" ui-sref="tabs.news">
+                <i class="icon ion-ios-film-outline"></i>摄影技巧
+            </a>
+            <a class="item item-icon-left item-dark">
+                <i class="icon ion-ios-chatboxes-outline"></i>影像圈
+            </a>
+            <a class="item item-icon-left item-dark">
+                <i class="icon ion-ios-bookmarks-outline"></i>印象杂志
+            </a>
+            <a class="item item-icon-left item-dark">
+                <i class="icon ion-ios-bookmarks-outline"></i>对话
+            </a>
+            <a class="item item-icon-left item-dark">
+                <i class="icon ion-ios-pulse"></i>极限摄影
+            </a>
+        </div>
+    </ion-content>
+</ion-side-menu>
+    <ion-side-menu side="right" class="dark-bg" menu-close ng-controller="tabsCtrl">
+        <div class="list" id="list_right">
+            <a class="item item-dark" ng-repeat="product in categories" ng-click="toNews(product)">
+                {{product.category}}
+            </a>
+        </div>
+    </ion-side-menu>
+
+</ion-side-menus>
+
+</body>
+</html>

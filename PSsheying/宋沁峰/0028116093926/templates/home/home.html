@@ -1,0 +1,96 @@
+<ion-view title="PS摄影" style="background-color:#f1f1f1" >
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-content style="top:0 !important;">
+        <ion-slide-box  id="slide_box" does-continue="true" auto-play="true" slide-interval="3000">
+            <ion-slide>
+                <a><img src="project/images/slide_01.jpg"></a>
+            </ion-slide>
+            <ion-slide>
+                <a><img src="project/images/slide_02.jpg"></a>
+            </ion-slide>
+            <ion-slide>
+                <a><img src="project/images/slide_03.jpg"></a>
+            </ion-slide>
+            <ion-slide>
+                <a><img src="project/images/slide_04.jpg"></a>
+            </ion-slide>
+            <ion-slide>
+                <a><img src="project/images/slide_05.jpg"></a>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="hone_content">
+            <div class="row" style="background: #fff;padding-top: 10px">
+                <div class="col col-25">
+                    <button class="button button-light" ui-sref="works">
+                        <i class="icon ion-ios-albums-outline"></i>
+                    </button>
+                    <p>作品</p>
+                </div>
+                <div class="col col-25">
+                    <button class="button button-light" ui-sref="tabs_pic.pic_new">
+                        <i class="icon ion-image"></i>
+                    </button>
+                    <p>图片广场</p>
+                </div>
+                <div class="col col-25">
+                    <button class="button button-light" ui-sref="tabs.news">
+                        <i class="icon ion-ios-bookmarks-outline"></i>
+                    </button>
+                    <p>摄影技巧</p>
+                </div>
+                <div class="col col-25">
+                    <button class="button button-light">
+                        <i class="icon ion-ios-chatboxes-outline"></i>
+                    </button>
+                    <p>影像圈</p>
+                </div>
+            </div>
+            <div class="list list_margin">
+                <div class="item item_float">
+                    <h2>潜水·摄影</h2>
+                    <a>更多<i class="icon ion-chevron-right"></i></a>
+                </div>
+                <div class="item" style="padding: 0">
+                    <img class="col-50" src="project/images/home_01.jpg">
+                    <img class="col-50" src="project/images/home_02.jpg">
+                </div>
+            </div>
+            <div class="list list_margin">
+                <ion-item class="item item_float">
+                    <h2>对话</h2>
+                    <a>更多<i class="icon ion-chevron-right"></i></a>
+                </ion-item>
+                <ion-item style="padding: 0" ng-repeat="product in data.productdata.contents" id="item_content" ng-click="tohome_Detail(product)">
+                    <img ng-src="{{product.imgsrc}}">
+
+                    <h2>{{product.leftp}}</h2>
+                    <span></span>
+                    <p>{{product.botp}}</p>
+                </ion-item>
+
+            </div>
+            <div class="list list_margin">
+                <ion-item class="item item_float">
+                    <h2>PS摄影红人</h2>
+                    <a>更多<i class="icon ion-chevron-right"></i></a>
+                </ion-item>
+                <ion-item class="item-avatar avatar" ng-repeat="conten in data.productdata.contentsBot">
+                    <img ng-src="{{conten.imgsrc}}">
+                    <h2>{{conten.name}}</h2>
+                    <p>{{conten.sesc}}</p>
+                    <div class="row">
+                        <div class="col-33 col_bot">
+                            <a><img ng-src="{{conten.imgsrc01}}"></a>
+                            <a><img ng-src="{{conten.imgsrc02}}"></a>
+                            <a><img ng-src="{{conten.imgsrc03}}"></a>
+                        </div>
+                    </div>
+                </ion-item>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

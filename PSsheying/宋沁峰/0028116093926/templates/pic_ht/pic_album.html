@@ -1,0 +1,19 @@
+<ion-view view-title="图片广场">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <div class="row_one_hang" ng-repeat="row in content">
+            <span class="vw_bg"><img ng-src="{{row.imgsrc}}"></span>
+            <span class="vw_main">
+                <h1>{{row.h1}}</h1>
+                <p>{{row.name}}</p>
+            </span>
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+
+    </ion-content>
+    <div class="top" ng-click="top()">TOP</div>
+
+</ion-view>

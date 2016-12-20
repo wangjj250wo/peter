@@ -1,0 +1,33 @@
+<ion-view view-title="商品详细">
+    <ion-content>
+        <div class="title_m detail_title">
+            <h2>{{product.title}}</h2>
+            <p class="one">编辑：angtyb | 作者：PS摄影社区</p>
+            <p class="two clear">{{product.desc}}</p>
+            <img ng-src="{{product.imgsrc}}">
+        </div>
+        <div class="content_m">
+            <p>　　标榜自拍功能的空拍机多的是，就连 DJI Mavic Pro 和 Phantom 4 Pro 也有个手势自拍模式。AirSelfie近日登陆Kickstarter便大受关注，究竟有何吸引要求秘诀呢？原来这台自拍无人机小巧得很，机身大小媲美现时最常用的自拍工具──智能手机！
+            <br>    　 标榜自拍功能的空拍机多的是，就连 DJI Mavic Pro 和 Phantom 4 Pro 也有个手势自拍模式。AirSelfie近日登陆Kickstarter便大受关注，究竟有何吸引要求秘诀呢？原来这台自拍无人机小巧得很，机身大小媲美现时最常用的自拍工具──智能手机！
+            <br>   　　标榜自拍功能的空拍机多的是，就连 DJI Mavic Pro 和 Phantom 4 Pro 也有个手势自拍模式。AirSelfie近日登陆Kickstarter便大受关注，究竟有何吸引要求秘诀呢？原来这台自拍无人机小巧得很，机身大小媲美现时最常用的自拍工具──智能手机！
+            <br>   　　标榜自拍功能的空拍机多的是，就连 DJI Mavic Pro 和 Phantom 4 Pro 也有个手势自拍模式。AirSelfie近日登陆Kickstarter便大受关注，究竟有何吸引要求秘诀呢？原来这台自拍无人机小巧得很，机身大小媲美现时最常用的自拍工具──智能手机！
+            <br>  　　 标榜自拍功能的空拍机多的是，就连 DJI Mavic Pro 和 Phantom 4 Pro 也有个手势自拍模式。AirSelfie近日登陆Kickstarter便大受关注，究竟有何吸引要求秘诀呢？原来这台自拍无人机小巧得很，机身大小媲美现时最常用的自拍工具──智能手机！
+            </p>
+            <p class="contentfoot">来源：PS对话栏目</p>
+        </div>
+        <div class="content_f">
+            <p class="top">评论</p>
+            <div class="list pinglunlist" >
+                <div class="item item-avatar-left item-pinglun" ng-repeat="item in cards">
+                    <img ng-src="{{item.touxiang}}">
+                    <h4 class="clear" style="color: #666">{{item.name}}</h4>
+                    <p class="time clear">{{item.time | date:"yyyy-MM-dd HH:mm:ss"}}</p><br>
+                    <p class="content" style="font-size: 14px;color: #000; ">{{item.content}}</p>
+                </div>
+            </div>
+            <button class="button  button-calm" style="float: right;margin-right: 20px;margin-bottom: 20px;min-height: 20px;line-height: 32px;" ng-click="showPopup()">评论</button>
+        </div>
+    </ion-content>
+    <div class="top" ng-click="top()">TOP</div>
+
+</ion-view>
